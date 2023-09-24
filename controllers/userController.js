@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const User = require("../models/userModel") 
-// const validateToken = require("../middleware/validateTokenHandler")
+const validateToken = require("../middleware/validateTokenHandler")
 
 
 //register the user
@@ -38,7 +38,7 @@ const registerUser = asyncHandler(async (req,res)=>{
     res.json({message: "Register the user"})
 })
 
-//login the user
+//login the user = generate access token
 const loginUser = asyncHandler(async (req,res)=>{
     const {email, password} = req.body
     if(!email || !password){
