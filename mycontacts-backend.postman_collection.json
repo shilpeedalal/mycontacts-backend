@@ -15,13 +15,13 @@
 			"response": []
 		},
 		{
-			"name": "register",
+			"name": "Register new user",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"daksh\",\r\n    \"email\": \"dakh@gmail.com\",\r\n    \"password\": \"612\"\r\n}",
+					"raw": "{\r\n    \"username\": \"Elon\",\r\n    \"email\": \"ElonMusk@gmail.com\",\r\n    \"password\": \"ElonMusk\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -46,13 +46,13 @@
 			"response": []
 		},
 		{
-			"name": "login",
+			"name": "Login existing user",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"shilpee@gmail.com\",\r\n    \"password\":\"612\"\r\n}",
+					"raw": "{\r\n    \"email\": \"ElonMusk@gmail.com\",\r\n    \"password\":\"ElonMusk\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -78,16 +78,29 @@
 		},
 		{
 			"name": "current",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3000/api/users/current",
-					"protocol": "http",
+					"raw": "https://node-sjl1.onrender.com/api/users/current",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"node-sjl1",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"users",
@@ -111,12 +124,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/contacts/",
-					"protocol": "http",
+					"raw": "https://node-sjl1.onrender.com/api/contacts/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"node-sjl1",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"contacts",
@@ -132,16 +146,6 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2hpbHBlZSIsImVtYWlsIjoic2hpbHBlZUBnbWFpbC5jb20iLCJpZCI6IjY0YWU2ZmYxMWRiYzdjZTAxZDZiN2Q4ZSJ9LCJpYXQiOjE2OTMyOTUwMzMsImV4cCI6MTY5MzI5NTkzM30.BXQ_UhEWQr5mDRgtMHGTlHj1vtnWniNNXQZI3CobXog",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -154,12 +158,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5001/api/contacts/:id",
-					"protocol": "http",
+					"raw": "https://node-sjl1.onrender.com/api/contacts/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"node-sjl1",
+						"onrender",
+						"com"
 					],
-					"port": "5001",
 					"path": [
 						"api",
 						"contacts",
@@ -175,7 +180,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "64ae7bf3594e6ce986eae563"
+							"value": "654ba7fba4836dfada33ac3e"
 						}
 					]
 				}
@@ -185,16 +190,6 @@
 		{
 			"name": "create contact",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [
 					{
@@ -205,7 +200,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n   \"name\" : \"shilpeee\",\r\n   \"email\":\"shilpeee@gmail.com\",\r\n   \"phone\": \"1234567\"\r\n}",
+					"raw": "{\r\n   \"name\" : \"Tara\",\r\n   \"email\":\"Tara@gmail.com\",\r\n   \"phone\": \"Tara\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -213,12 +208,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5001/api/contacts/",
-					"protocol": "http",
+					"raw": "https://node-sjl1.onrender.com/api/contacts/",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"node-sjl1",
+						"onrender",
+						"com"
 					],
-					"port": "5001",
 					"path": [
 						"api",
 						"contacts",
@@ -233,13 +229,23 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tara Deyn\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:5001/api/contacts/:id",
-					"protocol": "http",
+					"raw": "https://node-sjl1.onrender.com/api/contacts/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"node-sjl1",
+						"onrender",
+						"com"
 					],
-					"port": "5001",
 					"path": [
 						"api",
 						"contacts",
@@ -248,7 +254,7 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": "123"
+							"value": "654ba7fba4836dfada33ac3e"
 						}
 					]
 				}
@@ -262,7 +268,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"manshi\",\r\n    \"email\": \"manshi@gmail.com\",\r\n    \"phone\": \"1893830033\"\r\n}",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -270,12 +276,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/contacts/:id",
-					"protocol": "http",
+					"raw": "https://node-sjl1.onrender.com/api/contacts/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"node-sjl1",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"contacts",
@@ -284,18 +291,10 @@
 					"variable": [
 						{
 							"key": "id",
-							"value": null
+							"value": "654ba7fba4836dfada33ac3e"
 						}
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "homepage",
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}
@@ -305,7 +304,7 @@
 		"apikey": [
 			{
 				"key": "value",
-				"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2hpbHBlZSIsImVtYWlsIjoic2hpbHBlZUBnbWFpbC5jb20iLCJpZCI6IjY0YWU2ZmYxMWRiYzdjZTAxZDZiN2Q4ZSJ9LCJpYXQiOjE2OTU5MTM3NjgsImV4cCI6MTY5NTkxNDY2OH0.2CSm04k6q-wtfwTu3gUvo_XAy3wim2ZFvia3isk7MRY",
+				"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiRWxvbiIsImVtYWlsIjoiRWxvbk11c2tAZ21haWwuY29tIiwiaWQiOiI2NTRiYTdhZWE0ODM2ZGZhZGEzM2FjM2EifSwiaWF0IjoxNjk5NDU2OTYyLCJleHAiOjE2OTk0NTc4NjJ9.wDa_CiHu5wCuav51k2eptlhn788RE4Rr8bgWLF5p3l4",
 				"type": "string"
 			},
 			{
