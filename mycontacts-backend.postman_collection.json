@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "600dfce6-4ae2-4c26-baaf-80f3730faa1b",
+		"name": "mycontacts-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25953615"
+	},
+	"item": [
+		{
+			"name": "user",
+			"request": {
+				"method": "VIEW",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"daksh\",\r\n    \"email\": \"dakh@gmail.com\",\r\n    \"password\": \"612\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://node-sjl1.onrender.com/api/users/register",
+					"protocol": "https",
+					"host": [
+						"node-sjl1",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"shilpee@gmail.com\",\r\n    \"password\":\"612\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://node-sjl1.onrender.com/api/users/login",
+					"protocol": "https",
+					"host": [
+						"node-sjl1",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "current",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/current",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"current"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contact",
+			"request": {
+				"method": "VIEW",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getContacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/contacts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"contacts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getContact",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2hpbHBlZSIsImVtYWlsIjoic2hpbHBlZUBnbWFpbC5jb20iLCJpZCI6IjY0YWU2ZmYxMWRiYzdjZTAxZDZiN2Q4ZSJ9LCJpYXQiOjE2OTMyOTUwMzMsImV4cCI6MTY5MzI5NTkzM30.BXQ_UhEWQr5mDRgtMHGTlHj1vtnWniNNXQZI3CobXog",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/contacts/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"contacts",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "64ae7bf3594e6ce986eae563"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\" : \"shilpeee\",\r\n   \"email\":\"shilpeee@gmail.com\",\r\n   \"phone\": \"1234567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/contacts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"contacts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update contact",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/contacts/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"contacts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete contact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"manshi\",\r\n    \"email\": \"manshi@gmail.com\",\r\n    \"phone\": \"1893830033\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/contacts/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"contacts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "homepage",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2hpbHBlZSIsImVtYWlsIjoic2hpbHBlZUBnbWFpbC5jb20iLCJpZCI6IjY0YWU2ZmYxMWRiYzdjZTAxZDZiN2Q4ZSJ9LCJpYXQiOjE2OTU5MTM3NjgsImV4cCI6MTY5NTkxNDY2OH0.2CSm04k6q-wtfwTu3gUvo_XAy3wim2ZFvia3isk7MRY",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

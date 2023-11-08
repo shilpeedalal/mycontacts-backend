@@ -8,6 +8,9 @@ const app = express();
 
 //middleware
 app.use(express.json())
+// app.get('/', (req,res)=>{
+//     res.send("Homepage")
+// })
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/userRoutes"))
 app.use(errorHandler)
