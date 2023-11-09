@@ -8,9 +8,9 @@ const app = express();
 
 //middleware
 app.use(express.json())
-// app.get('/', (req,res)=>{
-//     res.send("")
-// })
+app.get('/', (req,res)=>{
+    res.send("This is HomePage for the Contact Management System project. This project has only backend. Here is the github link and also postman collections link.")
+})
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/userRoutes"))
 app.use(errorHandler)
