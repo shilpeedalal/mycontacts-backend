@@ -9,15 +9,7 @@ const app = express();
 //middleware
 app.use(express.json())
 app.get('/', (req,res)=>{
-    const data = {
-        message : 'Welcome to the HomePage of Contact Management System.',
-        content : 'This API provides endpoints for managing contacts. You can find the useful links below:',
-        links: {
-            githubRepository : 'https://github.com/shilpeedalal/mycontacts-backend',
-            postmanCollection : 'https://github.com/shilpeedalal/mycontacts-backend/blob/master/mycontacts-backend.postman_collection.json'
-        }
-    }
-    res.json(data)
+    res.send("HomePage")
 })
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/userRoutes"))
