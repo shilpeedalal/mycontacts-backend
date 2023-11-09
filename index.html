@@ -11,5 +11,26 @@
     <a href="https://github.com/shilpeedalal/mycontacts-backend" target="_blank">Github Repository</a>
     <br>
     <a href="https://github.com/shilpeedalal/mycontacts-backend/blob/master/mycontacts-backend.postman_collection.json" target="_blank">Postman Collection</a>
+    <br><br>
+    <button onclick="downloadFile()">Download Postman Collection</button>
+
+<script>
+function downloadFile() {
+  // Create a link element
+  const a = document.createElement('a');
+  a.href = './mycontacts-backend.postman_collection.json'  // Replace with the actual path to your file
+  a.download = './mycontacts-backend.postman_collection.json';  // Specify the desired name for the downloaded file
+
+  // Append the link to the body
+  document.body.appendChild(a);
+
+  // Trigger a click on the link
+  a.click();
+
+  // Remove the link from the body
+  document.body.removeChild(a);
+}
+</script>
+
 </body>
 </html>
